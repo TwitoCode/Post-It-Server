@@ -20,7 +20,7 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 const startServer = async () => {
 	try {
-		const { url } = await server.listen({ port: 5000 });
+		const { url } = await server.listen({ port: process.env.PORT });
 		console.log(`Server running on ${url}`);
 	} catch (error) {
 		console.log(error.message);
