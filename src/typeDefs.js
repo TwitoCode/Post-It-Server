@@ -9,8 +9,8 @@ module.exports = gql`
 	}
 
 	type Query {
-		posts: [Post]
-		post(userID: ID): Post
+		posts(userID: ID!): [Post]!
+		post(userID: ID!): Post!
 	}
 
 	input PostInput {
@@ -22,10 +22,10 @@ module.exports = gql`
 
 	type Mutation {
 		createPost(data: PostInput): Post
-  }
-  
-  schema {
-    query: Query
-    mutation: Mutation
-  }
+	}
+
+	schema {
+		query: Query
+		mutation: Mutation
+	}
 `;
