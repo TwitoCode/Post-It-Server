@@ -22,5 +22,10 @@ module.exports = gql`
 
 	type Mutation {
 		createPost(data: PostInput): Post
-	}
+  }
+  
+  schema {
+    query: Query
+    mutation: Mutation
+  }
 `;

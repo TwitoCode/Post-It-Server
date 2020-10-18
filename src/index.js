@@ -16,7 +16,12 @@ const connectMongo = async () => {
 	}
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+	typeDefs,
+	resolvers,
+	introspection: true,
+	playground: true,
+});
 
 const startServer = async () => {
 	try {
