@@ -2,7 +2,6 @@ const { ApolloServer } = require('apollo-server');
 const { connect } = require('mongoose');
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
-require('dotenv')();
 
 const connectMongo = async () => {
 	try {
