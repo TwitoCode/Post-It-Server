@@ -1,0 +1,22 @@
+{
+	"name": "server-v2",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon ./src/index.js",
+		"start": "node ./src/index.js",
+		"deploy": "git add . && git commit . -m redeployed && heroku builds:cancel && git push heroku master",
+		"log": "heroku logs --tail"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"apollo-server": "^2.18.2",
+		"dotenv": "^8.2.0",
+		"graphql": "^15.3.0",
+		"mongoose": "^5.10.9",
+		"nodemon": "^2.0.5"
+	}
+}
