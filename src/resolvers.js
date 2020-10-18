@@ -1,6 +1,6 @@
 const Post = require('./models/Post');
 
-export default {
+module.exports = {
 	Query: {
 		posts: () => {
 			return Post.find();
