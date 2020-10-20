@@ -6,15 +6,17 @@ module.exports = gql`
 		name: String!
 		desc: String!
 		userID: ID!
+		username: String!
 	}
 
 	type Query {
-		posts(userID: ID!): [Post]!
-		post(userID: ID!): Post!
+		posts(userID: ID): [Post]!
+		post(userID: ID): Post!
 	}
 
 	input PostInput {
 		_id: ID
+		username: String!
 		name: String!
 		desc: String!
 		userID: ID!

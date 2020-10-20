@@ -3,10 +3,13 @@ const Post = require('./models/Post');
 module.exports = {
 	Query: {
 		posts: (parent, args) => {
-			return Post.find({ userID: args.userID });
+			if (args.userID) return Post.find({ userID: args.userID });
+			return Post.find();
 		},
 		post: (parent, args) => {
-			return Post.findOne({ userID: args.userID });
+			if (args.userID) return Post.findOne({ userID: args.userID });
+			if (args.username)
+				return Post.findOne({ userID: args.username.toString().toLowerCase() });
 		},
 	},
 
