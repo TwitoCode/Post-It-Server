@@ -10,7 +10,7 @@ module.exports = gql`
 	}
 
 	type Query {
-		posts(userID: ID, username: String, all: Boolean): [Post]
+		posts(userID: ID, username: String): [Post]
 		#post(userID: ID, username: String): Post!
 	}
 
