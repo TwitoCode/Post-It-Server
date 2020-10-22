@@ -10,9 +10,9 @@ const connectMongo = async () => {
 			{ useNewUrlParser: true, useUnifiedTopology: true }
 		);
 
-		console.log('Connected to MongoDB');
+		// console.log('Connected to MongoDB');
 	} catch (error) {
-		console.log(error.message);
+		// console.log(error.message);
 	}
 };
 
@@ -26,9 +26,9 @@ const server = new ApolloServer({
 const startServer = async () => {
 	try {
 		const { url } = await server.listen({ port: 5000 });
-		console.log(`Server running on ${url}`);
+		// console.log(`Server running on ${url}`);
 	} catch (error) {
-		console.log(error.message);
+		// console.log(error.message);
 	}
 };
 
