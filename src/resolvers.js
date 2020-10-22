@@ -4,25 +4,24 @@ module.exports = {
 	Query: {
 		posts: (parent, args) => {
 			if (args.userID) return Post.find({ userID: args.userID });
-			else if (args.username)
-				return Post.find({ username: args.username.toString().toLowerCase() });
+			else if (args.username) return Post.find({ username: args.username });
 			else return Post.find();
 		},
-		// post: (parent, args) => {
-		// 	if (args.userID) return Post.findOne({ userID: args.userID });
-		// 	if (args.username)
-		// 		return Post.findOne({ username: args.username.toString().toLowerCase() });
-		// },
 	},
 
 	Mutation: {
 		createPost: (parent, args) => {
-			const {
-				data: { userID, name, desc, username },
-			} = args;
+			const { userID, name, desc, username } = args;
+			console.log(userID, name, desc, username);
 
-			const lower = username.toString().toLowerCase();
-			const post = new Post({ userID, name, desc, username: lower });
+			if (!userID) return null;
+			if (!name) return null;
+			if (!desc) return null;
+			if (!username) return null;
+
+			console.log('Created a new Post')
+			const post = new Post({ userID, name, desc, username });
+			
 			return post.save();
 		},
 	},
